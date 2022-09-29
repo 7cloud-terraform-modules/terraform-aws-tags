@@ -16,6 +16,32 @@ $ terraform plan
 $ terraform apply
 ```
 
+For using this module in the resources or modules you wish to tag you need, first, to be sure the resource is able to receive tags, if so:
+
+1. Create a variable in your current project:
+```hcl
+variable "TAGS" {
+  type        = map(string)
+  description = "Tag List"
+  default     = null
+}
+```
+
+2. Then apply this logic on the resources you wish to tag:
+```hcl
+tags = var.TAGS != null ? var.TAGS : null
+```
+
+3. Visual example for applying it:
+```hcl
+resource "aws_s3_bucket" "this" {
+  bucket = "my-tf-test-bucket"
+
+  tags = var.TAGS != null ? var.TAGS : null
+}
+```
+
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
