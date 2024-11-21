@@ -11,6 +11,7 @@ locals {
     ProjectType    = var.PROJECT_TYPE
     ProjectVersion = var.PROJECT_VERSION
     LOB            = var.LOB
+    APP_ID         = var.APP_ID
     Terraform      = true
     CloudFormation = false
     Pulumi         = false

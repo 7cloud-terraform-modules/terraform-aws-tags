@@ -45,3 +45,9 @@ variable "LOB" {
   type        = string
   default     = ""
 }
+
+variable "APP_ID" {
+  description = "Application Identification"
+  type        = string
+  default     = ""
+}

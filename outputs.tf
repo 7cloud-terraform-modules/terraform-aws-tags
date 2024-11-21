@@ -30,6 +30,10 @@ output "LOB" {
   value = var.LOB
 }
 
+output "APP_ID" {
+  value = var.APP_ID
+}
+
 output "TAGS" {
   value = local.common_tags
 }
